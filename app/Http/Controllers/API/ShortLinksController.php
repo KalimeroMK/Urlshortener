@@ -9,6 +9,7 @@
 
     class ShortLinksController extends Controller
     {
+        
         /**
          * @return JsonResponse
          */

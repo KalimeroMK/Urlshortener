@@ -18,7 +18,7 @@
         public function index()
         {
             $shortLinks = ShortLink::latest()->take(10)->get();
-            return view('shortenLinks', compact('shortLinks'));
+            return view('pages.shortenLinks', compact('shortLinks'));
         }
 
         /**
@@ -39,7 +39,11 @@
         {
             $url = ShortLink::whereShortUrl($link)->firstOrFail();
             ShortLink::whereShortUrl($link)->update(['clicks' => $url->clicks + 1]);
-            return redirect($url->url);
+            if ($url->safe == false) {
+                return view('pages.notification', compact('url'));
+            } else {
+                return redirect($url->url);
+            }
         }
 
         /**
@@ -48,6 +52,6 @@
         public function topLinks()
         {
             $links = ShortLink::popular();
-            return view('popularLinks', compact('links'));
+            return view('pages.popularLinks', compact('links'));
         }
     }

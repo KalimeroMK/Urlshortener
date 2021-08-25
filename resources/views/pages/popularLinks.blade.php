@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Url shortener using Laravel</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"/>
-</head>
-<body>
-
+@extends('layouts.app')
+@section('content')
 <div class="container">
     <div class="card">
         <div class="card-body">
@@ -31,5 +25,4 @@
         </div>
     </div>
 </div>
-</body>
-</html>
+@endsection

@@ -17,6 +17,7 @@
     Route::get('/', [ShortLinksController::class, 'index']);
     Route::post('/generate-shorten-link', [ShortLinksController::class, 'store'])->name('generate.shorten.link.post');
     Route::get('/toplink', [ShortLinksController::class, 'topLinks'])->name('topLinks');
+    // this link mast be last
     Route::get('{link}', [ShortLinksController::class, 'shortenLink'])->name('shorten.link');
 
 

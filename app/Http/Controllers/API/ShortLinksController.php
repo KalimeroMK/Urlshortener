@@ -9,7 +9,7 @@
 
     class ShortLinksController extends Controller
     {
-        
+
         /**
          * @return JsonResponse
          */
@@ -33,7 +33,7 @@
          */
         public function shortenLink($link): JsonResponse
         {
-            $url = ShortLink::whereShortUrl($link)->firstOrFail();
+            $url = ShortLink::whereShortUrl($link)->findOrFail();
             ShortLink::whereShortUrl($link)->update(['clicks' => $url->clicks + 1]);
             return response()->success($url->url);
         }

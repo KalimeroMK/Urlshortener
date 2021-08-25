@@ -29,6 +29,11 @@
                     <p>{{ Session::get('success') }}</p>
                 </div>
             @endif
+            @if($errors->any())
+                @foreach ($errors->all() as $error)
+                    <div class="alert alert-danger">{{ $error }}</div>
+                @endforeach
+            @endif
             <table class="table table-bordered table-sm">
                 <thead>
                 <tr>

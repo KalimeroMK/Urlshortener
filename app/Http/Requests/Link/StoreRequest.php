@@ -9,7 +9,7 @@
         public function rules(): array
         {
             return [
-                'url' => 'url|required',
+                'url' => 'url|required|unique:short_links',
             ];
         }
 

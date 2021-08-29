@@ -11,6 +11,8 @@ Senior PHP developer.
 * **ENV**: rename .env-example to .env.
 * **Container ssh**: docker-compose exec app sh
 * **Run migrations**: php artisan:migrate.
+* **Domain**: add test.local in host file 
+
 
 ### End point collection for postman
 
